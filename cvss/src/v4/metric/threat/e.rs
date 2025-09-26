@@ -116,7 +116,7 @@ impl FromStr for ExploitMaturity {
 }
 
 #[cfg(feature = "std")]
-pub(crate) mod merge {
+pub mod merge {
     use super::*;
     use crate::{
         Error,
@@ -126,7 +126,7 @@ pub(crate) mod merge {
     use core::str::FromStr;
 
     #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
-    pub(crate) enum MergedExploitMaturity {
+    pub enum MergedExploitMaturity {
         Attacked,
         ProofOfConcept,
         Unreported,
@@ -155,7 +155,7 @@ pub(crate) mod merge {
     }
 
     impl ExploitMaturity {
-        pub(crate) fn merge(self) -> MergedExploitMaturity {
+        pub fn merge(self) -> MergedExploitMaturity {
             match self {
                 Self::Attacked => MergedExploitMaturity::Attacked,
                 Self::ProofOfConcept => MergedExploitMaturity::ProofOfConcept,

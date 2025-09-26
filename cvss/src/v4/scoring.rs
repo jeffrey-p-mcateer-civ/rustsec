@@ -33,7 +33,7 @@ mod max_composed;
 mod max_severity;
 
 #[derive(Hash, Debug)]
-pub(crate) enum VectorEq {
+pub enum VectorEq {
     Eq1(u8),
     Eq2(u8),
     Eq3Eq6(u8, u8),
@@ -46,7 +46,7 @@ pub(crate) enum VectorEq {
 ///
 /// Contains the result of the `m()` function of the reference implementation.
 #[derive(Default)]
-pub(crate) struct ScoringVector {
+pub struct ScoringVector {
     // Base scores overridden by modified scores
     ac: MergedAttackComplexity,
     at: MergedAttackRequirements,
@@ -262,7 +262,7 @@ impl ScoringVector {
         )
     }
 
-    pub(crate) fn score(&self) -> f64 {
+    pub fn score(&self) -> f64 {
         // Exception for no impact on system (shortcut)
         if self.vc == MergedConfidentialityImpactToTheVulnerableSystem::None
             && self.vi == MergedIntegrityImpactToTheVulnerableSystem::None

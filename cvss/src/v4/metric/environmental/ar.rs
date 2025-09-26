@@ -96,7 +96,7 @@ impl FromStr for AvailabilityRequirements {
 }
 
 #[cfg(feature = "std")]
-pub(crate) mod merge {
+pub mod merge {
     use super::*;
     use crate::{
         Error,
@@ -106,7 +106,7 @@ pub(crate) mod merge {
     use core::str::FromStr;
 
     #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
-    pub(crate) enum MergedAvailabilityRequirements {
+    pub enum MergedAvailabilityRequirements {
         Low,
         Medium,
         High,
@@ -135,7 +135,7 @@ pub(crate) mod merge {
     }
 
     impl AvailabilityRequirements {
-        pub(crate) fn merge(self) -> MergedAvailabilityRequirements {
+        pub fn merge(self) -> MergedAvailabilityRequirements {
             match self {
                 Self::High => MergedAvailabilityRequirements::High,
                 Self::Medium => MergedAvailabilityRequirements::Medium,

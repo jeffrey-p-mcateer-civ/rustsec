@@ -270,7 +270,7 @@ impl SourceId {
     }
 
     /// A view of the [`SourceId`] that can be `Display`ed as a URL.
-    pub(crate) fn as_url(&self, encoded: bool) -> SourceIdAsUrl<'_> {
+    pub fn as_url(&self, encoded: bool) -> SourceIdAsUrl<'_> {
         SourceIdAsUrl { id: self, encoded }
     }
 }
@@ -296,7 +296,7 @@ impl fmt::Display for SourceId {
 }
 
 /// A `Display`able view into a `SourceId` that will write it as a url
-pub(crate) struct SourceIdAsUrl<'a> {
+pub struct SourceIdAsUrl<'a> {
     id: &'a SourceId,
     encoded: bool,
 }

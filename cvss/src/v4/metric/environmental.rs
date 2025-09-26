@@ -26,7 +26,7 @@ pub use self::{
     mvi::ModifiedIntegrityImpactToTheVulnerableSystem,
 };
 #[cfg(feature = "std")]
-pub(crate) use self::{
+pub use self::{
     ar::merge::MergedAvailabilityRequirements, cr::merge::MergedConfidentialityRequirements,
     ir::merge::MergedIntegrityRequirements,
 };

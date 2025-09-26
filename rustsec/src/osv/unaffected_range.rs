@@ -7,7 +7,7 @@ use semver::{Comparator, Op, Prerelease, Version};
 use std::fmt::Display;
 
 #[derive(Clone, PartialEq, Eq, Hash, Debug)]
-pub(crate) enum Bound {
+pub enum Bound {
     Unbounded,
     Exclusive(Version),
     Inclusive(Version),
@@ -54,7 +54,7 @@ impl Bound {
 /// `start` is guaranteed to be less than or equal to `end`.
 /// If `start == end`, both bounds must be inclusive.
 #[derive(Clone, PartialEq, Eq, Hash, Debug)]
-pub(crate) struct UnaffectedRange {
+pub struct UnaffectedRange {
     start: Bound,
     end: Bound,
 }

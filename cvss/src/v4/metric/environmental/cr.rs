@@ -96,7 +96,7 @@ impl FromStr for ConfidentialityRequirements {
 }
 
 #[cfg(feature = "std")]
-pub(crate) mod merge {
+pub mod merge {
     use super::*;
     use crate::{
         Error,
@@ -106,7 +106,7 @@ pub(crate) mod merge {
     use core::str::FromStr;
 
     #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
-    pub(crate) enum MergedConfidentialityRequirements {
+    pub enum MergedConfidentialityRequirements {
         Low,
         Medium,
         High,
@@ -135,7 +135,7 @@ pub(crate) mod merge {
     }
 
     impl ConfidentialityRequirements {
-        pub(crate) fn merge(self) -> MergedConfidentialityRequirements {
+        pub fn merge(self) -> MergedConfidentialityRequirements {
             match self {
                 Self::High => MergedConfidentialityRequirements::High,
                 Self::Medium => MergedConfidentialityRequirements::Medium,

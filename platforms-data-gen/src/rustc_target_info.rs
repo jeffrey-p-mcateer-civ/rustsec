@@ -2,13 +2,13 @@
 
 use std::{io::BufRead, process::Child};
 
-pub(crate) type RustcTargetInfo = std::collections::HashMap<String, String>;
-pub(crate) type RustcTargetsInfo = Vec<RustcTargetInfo>;
-pub(crate) type TargetTriple = String;
+pub type RustcTargetInfo = std::collections::HashMap<String, String>;
+pub type RustcTargetsInfo = Vec<RustcTargetInfo>;
+pub type TargetTriple = String;
 
 /// Returns a list of all known target triples.
 /// Obtains it by invoking `rustc --print=target-list`
-pub(crate) fn target_triples() -> Vec<TargetTriple> {
+pub fn target_triples() -> Vec<TargetTriple> {
     std::process::Command::new("rustc")
         .arg("--print=target-list")
         .output()
@@ -21,7 +21,7 @@ pub(crate) fn target_triples() -> Vec<TargetTriple> {
 
 /// Returns detailed information about all targets.
 /// Since it invokes `rustc` for every target, it may take a while.
-pub(crate) fn targets_info(triples: &[TargetTriple]) -> RustcTargetsInfo {
+pub fn targets_info(triples: &[TargetTriple]) -> RustcTargetsInfo {
     // Spawn all queries at once to make use of all available cores.
     // No it's not premature optimization, it lets me iterate faster okay?
     let child_processes: Vec<Child> = triples

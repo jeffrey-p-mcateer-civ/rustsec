@@ -31,7 +31,7 @@ pub const FOOTERS: &[(&str, &[u8])] = &[
 
 use std::collections::HashMap;
 
-pub(crate) struct Templates {
+pub struct Templates {
     headers: HashMap<&'static str, &'static [u8]>,
     footers: HashMap<&'static str, &'static [u8]>,
 }

@@ -112,7 +112,7 @@ impl FromStr for AttackVector {
 }
 
 #[cfg(feature = "std")]
-pub(crate) mod merge {
+pub mod merge {
     use super::*;
     use crate::{
         Error,
@@ -128,7 +128,7 @@ pub(crate) mod merge {
     ///
     /// Used in scoring.
     #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
-    pub(crate) enum MergedAttackVector {
+    pub enum MergedAttackVector {
         Physical,
         Local,
         Adjacent,
@@ -171,7 +171,7 @@ pub(crate) mod merge {
     }
 
     impl AttackVector {
-        pub(crate) fn merge(self, value: Option<ModifiedAttackVector>) -> MergedAttackVector {
+        pub fn merge(self, value: Option<ModifiedAttackVector>) -> MergedAttackVector {
             match value {
                 Some(ModifiedAttackVector::NotDefined) | None => match self {
                     Self::Network => MergedAttackVector::Network,

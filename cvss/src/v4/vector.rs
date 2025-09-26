@@ -50,69 +50,69 @@ pub struct Vector {
     pub minor_version: usize,
 
     /// Attack Complexity (AC)
-    pub(crate) ac: Option<AttackComplexity>,
+    pub ac: Option<AttackComplexity>,
     /// Attack Requirements (AT)
-    pub(crate) at: Option<AttackRequirements>,
+    pub at: Option<AttackRequirements>,
     /// Attack Vector (AV)
-    pub(crate) av: Option<AttackVector>,
+    pub av: Option<AttackVector>,
     /// Privileges Required (PR)
-    pub(crate) pr: Option<PrivilegesRequired>,
+    pub pr: Option<PrivilegesRequired>,
     /// Availability Impact to the Subsequent System (SA)
-    pub(crate) sa: Option<AvailabilityImpactToTheSubsequentSystem>,
+    pub sa: Option<AvailabilityImpactToTheSubsequentSystem>,
     /// Confidentiality Impact to the Subsequent System (SC)
-    pub(crate) sc: Option<ConfidentialityImpactToTheSubsequentSystem>,
+    pub sc: Option<ConfidentialityImpactToTheSubsequentSystem>,
     /// Integrity Impact to the Subsequent System (SI)
-    pub(crate) si: Option<IntegrityImpactToTheSubsequentSystem>,
+    pub si: Option<IntegrityImpactToTheSubsequentSystem>,
     /// User Interaction (UI)
-    pub(crate) ui: Option<UserInteraction>,
+    pub ui: Option<UserInteraction>,
     /// Availability Impact to the Vulnerable System (VA)
-    pub(crate) va: Option<AvailabilityImpactToTheVulnerableSystem>,
+    pub va: Option<AvailabilityImpactToTheVulnerableSystem>,
     /// Confidentiality Impact to the Vulnerable System (VC)
-    pub(crate) vc: Option<ConfidentialityImpactToTheVulnerableSystem>,
+    pub vc: Option<ConfidentialityImpactToTheVulnerableSystem>,
     /// Integrity Impact to the Vulnerable System (VI)
-    pub(crate) vi: Option<IntegrityImpactToTheVulnerableSystem>,
+    pub vi: Option<IntegrityImpactToTheVulnerableSystem>,
     /// Exploit Maturity (E)
-    pub(crate) e: Option<ExploitMaturity>,
+    pub e: Option<ExploitMaturity>,
     /// Availability Requirements (AR)
-    pub(crate) ar: Option<AvailabilityRequirements>,
+    pub ar: Option<AvailabilityRequirements>,
     /// Confidentiality Requirements (CR)
-    pub(crate) cr: Option<ConfidentialityRequirements>,
+    pub cr: Option<ConfidentialityRequirements>,
     /// Integrity Requirements (IR)
-    pub(crate) ir: Option<IntegrityRequirements>,
+    pub ir: Option<IntegrityRequirements>,
     /// Modified Attack Complexity (AC)
-    pub(crate) mac: Option<ModifiedAttackComplexity>,
+    pub mac: Option<ModifiedAttackComplexity>,
     /// Modified Attack Requirements (MAT)
-    pub(crate) mat: Option<ModifiedAttackRequirements>,
+    pub mat: Option<ModifiedAttackRequirements>,
     /// Modified Attack Vector (MAV)
-    pub(crate) mav: Option<ModifiedAttackVector>,
+    pub mav: Option<ModifiedAttackVector>,
     /// Modified Privileges Required (MPR)
-    pub(crate) mpr: Option<ModifiedPrivilegesRequired>,
+    pub mpr: Option<ModifiedPrivilegesRequired>,
     /// Modified Availability Impact to the Subsequent System (MSA)
-    pub(crate) msa: Option<ModifiedAvailabilityImpactToTheSubsequentSystem>,
+    pub msa: Option<ModifiedAvailabilityImpactToTheSubsequentSystem>,
     /// Modified Confidentiality Impact to the Subsequent System (MSC)
-    pub(crate) msc: Option<ModifiedConfidentialityImpactToTheSubsequentSystem>,
+    pub msc: Option<ModifiedConfidentialityImpactToTheSubsequentSystem>,
     /// Modified Integrity Impact to the Subsequent System (MSI)
-    pub(crate) msi: Option<ModifiedIntegrityImpactToTheSubsequentSystem>,
+    pub msi: Option<ModifiedIntegrityImpactToTheSubsequentSystem>,
     /// Modified User Interaction (MUI)
-    pub(crate) mui: Option<ModifiedUserInteraction>,
+    pub mui: Option<ModifiedUserInteraction>,
     /// Modified Availability Impact to the Vulnerable System (MVA)
-    pub(crate) mva: Option<ModifiedAvailabilityImpactToTheVulnerableSystem>,
+    pub mva: Option<ModifiedAvailabilityImpactToTheVulnerableSystem>,
     /// Modified Confidentiality Impact to the Vulnerable System (MVC)
-    pub(crate) mvc: Option<ModifiedConfidentialityImpactToTheVulnerableSystem>,
+    pub mvc: Option<ModifiedConfidentialityImpactToTheVulnerableSystem>,
     /// Modified Integrity Impact to the Vulnerable System (MVI)
-    pub(crate) mvi: Option<ModifiedIntegrityImpactToTheVulnerableSystem>,
+    pub mvi: Option<ModifiedIntegrityImpactToTheVulnerableSystem>,
     /// Automatable (AU)
-    pub(crate) au: Option<Automatable>,
+    pub au: Option<Automatable>,
     /// Recovery (R)
-    pub(crate) r: Option<Recovery>,
+    pub r: Option<Recovery>,
     /// Vulnerability Response Effort (RE)
-    pub(crate) re: Option<VulnerabilityResponseEffort>,
+    pub re: Option<VulnerabilityResponseEffort>,
     /// Safety (S)
-    pub(crate) s: Option<Safety>,
+    pub s: Option<Safety>,
     /// Provider Urgency (U)
-    pub(crate) u: Option<ProviderUrgency>,
+    pub u: Option<ProviderUrgency>,
     /// Value Density (V)
-    pub(crate) v: Option<ValueDensity>,
+    pub v: Option<ValueDensity>,
 }
 
 impl Vector {

@@ -151,7 +151,7 @@ impl Score {
     /// return float(D(x + EPSILON).quantize(D("0.1"), rounding=ROUND_HALF_UP))
     /// ```
     #[cfg(feature = "std")]
-    pub(crate) fn round_v4(value: f64) -> f64 {
+    pub fn round_v4(value: f64) -> f64 {
         let value = f64::clamp(value, 0.0, 10.0);
         const EPSILON: f64 = 10e-6;
         ((value + EPSILON) * 10.).round() / 10.

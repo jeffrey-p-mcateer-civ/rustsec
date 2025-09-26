@@ -83,7 +83,7 @@ impl FromStr for AttackRequirements {
 }
 
 #[cfg(feature = "std")]
-pub(crate) mod merge {
+pub mod merge {
     use super::*;
     use crate::{
         Error,
@@ -99,7 +99,7 @@ pub(crate) mod merge {
     ///
     /// Used in scoring.
     #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
-    pub(crate) enum MergedAttackRequirements {
+    pub enum MergedAttackRequirements {
         Present,
         None,
     }
@@ -136,7 +136,7 @@ pub(crate) mod merge {
     }
 
     impl AttackRequirements {
-        pub(crate) fn merge(
+        pub fn merge(
             self,
             value: Option<ModifiedAttackRequirements>,
         ) -> MergedAttackRequirements {

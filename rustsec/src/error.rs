@@ -179,7 +179,7 @@ impl Error {
     /// will be bumped frequently and we don't want to bump `rustsec` semver
     /// every time it changes.
     #[cfg(feature = "git")]
-    pub(crate) fn from_tame(err: tame_index::Error) -> Self {
+    pub fn from_tame(err: tame_index::Error) -> Self {
         // Separate lock timeouts into their own LockTimeout variant.
         use tame_index::utils::flock::LockError;
         match err {
@@ -197,7 +197,7 @@ impl Error {
     ///
     /// This is used so rarely that there is no need to `impl From`,
     /// and this way we can avoid leaking it into the public API.
-    pub(crate) fn from_toml(other: toml::de::Error) -> Self {
+    pub fn from_toml(other: toml::de::Error) -> Self {
         format_err!(ErrorKind::Parse, &other)
     }
 }

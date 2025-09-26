@@ -96,7 +96,7 @@ impl FromStr for IntegrityRequirements {
 }
 
 #[cfg(feature = "std")]
-pub(crate) mod merge {
+pub mod merge {
     use super::*;
     use crate::{
         Error,
@@ -106,7 +106,7 @@ pub(crate) mod merge {
     use core::str::FromStr;
 
     #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
-    pub(crate) enum MergedIntegrityRequirements {
+    pub enum MergedIntegrityRequirements {
         Low,
         Medium,
         High,
@@ -135,7 +135,7 @@ pub(crate) mod merge {
     }
 
     impl IntegrityRequirements {
-        pub(crate) fn merge(self) -> MergedIntegrityRequirements {
+        pub fn merge(self) -> MergedIntegrityRequirements {
             match self {
                 Self::High => MergedIntegrityRequirements::High,
                 Self::Medium => MergedIntegrityRequirements::Medium,

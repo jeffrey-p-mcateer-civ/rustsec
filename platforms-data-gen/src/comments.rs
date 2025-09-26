@@ -10,7 +10,7 @@
 use crate::data::enum_variant_comments::COMMENTS;
 use std::collections::HashMap;
 
-pub(crate) struct Comments {
+pub struct Comments {
     data: HashMap<&'static str, &'static str>,
 }
 

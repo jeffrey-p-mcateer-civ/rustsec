@@ -7,7 +7,7 @@ use crate::{Map, Set, map, package};
 
 /// Database index which maps package names to a set of advisory IDs
 #[derive(Debug, Default)]
-pub(crate) struct Index(Map<package::Name, Set<Slot>>);
+pub struct Index(Map<package::Name, Set<Slot>>);
 
 impl Index {
     /// Create a new index

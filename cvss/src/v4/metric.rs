@@ -28,7 +28,7 @@ pub trait Metric: Copy + Clone + Debug + Display + Eq + FromStr + Ord + Default 
 
 #[cfg(feature = "std")]
 /// Some metrics have a level associated with them.
-pub(crate) trait MetricLevel {
+pub trait MetricLevel {
     /// Metric level used in scoring.
     fn level(self) -> f64;
 }

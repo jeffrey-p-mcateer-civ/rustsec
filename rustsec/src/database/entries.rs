@@ -16,11 +16,11 @@ use std::{
 /// "Slots" identify the location in the entries table where a particular
 /// advisory is located.
 #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
-pub(crate) struct Slot(usize);
+pub struct Slot(usize);
 
 /// Entries in the advisory database
 #[derive(Debug, Default)]
-pub(crate) struct Entries {
+pub struct Entries {
     /// Index of advisory IDs to their slots
     index: Map<advisory::Id, Slot>,
 

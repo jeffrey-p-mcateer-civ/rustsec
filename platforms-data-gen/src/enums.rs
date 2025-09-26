@@ -6,17 +6,17 @@ use std::collections::BTreeSet;
 use crate::rustc_target_info::RustcTargetsInfo;
 
 #[must_use]
-pub(crate) fn distinct_values(key: &str, info: &RustcTargetsInfo) -> BTreeSet<String> {
+pub fn distinct_values(key: &str, info: &RustcTargetsInfo) -> BTreeSet<String> {
     info.iter().map(|t| &t[key]).cloned().collect()
 }
 
 #[must_use]
-pub(crate) fn enumify_value(key: &str, value: &str) -> String {
+pub fn enumify_value(key: &str, value: &str) -> String {
     format!("{}::{}", to_enum_name(key), to_enum_variant_name(value))
 }
 
 #[must_use]
-pub(crate) fn to_enum_name(key: &str) -> &'static str {
+pub fn to_enum_name(key: &str) -> &'static str {
     match key {
         "target_arch" => "Arch",
         "target_os" => "OS",
@@ -29,7 +29,7 @@ pub(crate) fn to_enum_name(key: &str) -> &'static str {
 }
 
 #[must_use]
-pub(crate) fn to_enum_variant_name(value: &str) -> String {
+pub fn to_enum_variant_name(value: &str) -> String {
     let name = value.to_ascii_lowercase();
     match name.as_str() {
         "" => "None".to_owned(), // This is used for `Env` which is set to empty string by default

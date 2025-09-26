@@ -97,7 +97,7 @@ impl FromStr for UserInteraction {
 }
 
 #[cfg(feature = "std")]
-pub(crate) mod merge {
+pub mod merge {
     use super::*;
     use crate::{
         Error,
@@ -113,7 +113,7 @@ pub(crate) mod merge {
     ///
     /// Used in scoring.
     #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
-    pub(crate) enum MergedUserInteraction {
+    pub enum MergedUserInteraction {
         Active,
         Passive,
         None,
@@ -153,7 +153,7 @@ pub(crate) mod merge {
     }
 
     impl UserInteraction {
-        pub(crate) fn merge(self, value: Option<ModifiedUserInteraction>) -> MergedUserInteraction {
+        pub fn merge(self, value: Option<ModifiedUserInteraction>) -> MergedUserInteraction {
             match value {
                 Some(ModifiedUserInteraction::NotDefined) | None => match self {
                     Self::Passive => MergedUserInteraction::Passive,

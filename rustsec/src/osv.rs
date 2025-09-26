@@ -22,4 +22,4 @@ mod unaffected_range;
 
 pub use range::OsvRange;
 pub use ranges_for_advisory::ranges_for_advisory;
-pub(crate) use ranges_for_advisory::ranges_for_unvalidated_advisory;
+pub use ranges_for_advisory::ranges_for_unvalidated_advisory;

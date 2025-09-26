@@ -251,7 +251,7 @@ fn emit_package(dep: &toml::value::Table, out: &mut String) {
 
 /// Serialization-oriented equivalent to [`Package`]
 #[derive(Debug, Deserialize, Serialize)]
-pub(crate) struct EncodablePackage {
+pub struct EncodablePackage {
     /// Package name
     pub(super) name: Name,
 
@@ -348,7 +348,7 @@ impl TryFrom<&EncodablePackage> for Package {
 
 /// Package dependencies
 #[derive(Clone, Debug, Eq, Hash, PartialEq, PartialOrd, Ord)]
-pub(crate) struct EncodableDependency {
+pub struct EncodableDependency {
     /// Name of the dependency
     pub(super) name: Name,
 

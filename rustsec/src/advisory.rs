@@ -10,7 +10,7 @@ mod license;
 pub mod linter;
 mod metadata;
 mod parts;
-pub(crate) mod versions;
+pub mod versions;
 
 pub use self::{
     affected::Affected,

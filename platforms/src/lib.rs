@@ -20,7 +20,7 @@
 #[cfg(feature = "std")]
 extern crate std;
 
-pub(crate) mod error;
+pub mod error;
 pub mod platform;
 pub mod target;
 

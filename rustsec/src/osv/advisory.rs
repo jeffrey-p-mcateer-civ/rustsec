@@ -46,9 +46,9 @@ pub struct OsvAdvisory {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct OsvPackage {
     /// Set to a constant identifying crates.io
-    pub(crate) ecosystem: String,
+    pub ecosystem: String,
     /// Crate name
-    pub(crate) name: String,
+    pub name: String,
     /// https://github.com/package-url/purl-spec derived from the other two
     #[serde(default)]
     purl: Option<String>,
@@ -79,7 +79,7 @@ impl From<cvss::v3::Base> for OsvSeverity {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct OsvAffected {
-    pub(crate) package: OsvPackage,
+    pub package: OsvPackage,
     ecosystem_specific: Option<OsvEcosystemSpecific>,
     database_specific: OsvDatabaseSpecific,
     ranges: Option<Vec<OsvJsonRange>>,

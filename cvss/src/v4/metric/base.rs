@@ -20,7 +20,7 @@ pub use self::{
     vi::IntegrityImpactToTheVulnerableSystem,
 };
 #[cfg(feature = "std")]
-pub(crate) use self::{
+pub use self::{
     ac::merge::MergedAttackComplexity, at::merge::MergedAttackRequirements,
     av::merge::MergedAttackVector, pr::merge::MergedPrivilegesRequired,
     sa::merge::MergedAvailabilityImpactToTheSubsequentSystem,

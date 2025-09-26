@@ -8,10 +8,10 @@ use std::{
 };
 
 /// Minimum allowed year on advisory dates
-pub(crate) const YEAR_MIN: u32 = 2000;
+pub const YEAR_MIN: u32 = 2000;
 
 /// Maximum allowed year on advisory dates
-pub(crate) const YEAR_MAX: u32 = YEAR_MIN + 100;
+pub const YEAR_MAX: u32 = YEAR_MIN + 100;
 
 /// Dates on advisories (RFC 3339)
 #[derive(Clone, Debug, Eq, Hash, PartialEq, PartialOrd, Ord, Serialize)]

@@ -63,7 +63,7 @@ impl TryFrom<RawVersions> for Versions {
 
 #[derive(Clone, Debug, Default, Deserialize, Eq, PartialEq, Serialize)]
 /// Raw deserialized data that didn't pass validation yet
-pub(crate) struct RawVersions {
+pub struct RawVersions {
     pub patched: Vec<VersionReq>,
 
     #[serde(default)]

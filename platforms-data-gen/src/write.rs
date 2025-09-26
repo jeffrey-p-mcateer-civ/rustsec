@@ -10,7 +10,7 @@ use crate::enums::*;
 use crate::rustc_target_info::{RustcTargetInfo, RustcTargetsInfo};
 use crate::templates::Templates;
 
-pub(crate) const FIELDS_WITH_ENUMS: [&str; 5] = [
+pub const FIELDS_WITH_ENUMS: [&str; 5] = [
     "target_arch",
     "target_os",
     "target_env",
@@ -18,7 +18,7 @@ pub(crate) const FIELDS_WITH_ENUMS: [&str; 5] = [
     "target_pointer_width",
 ];
 
-pub(crate) fn write_targets_file<W: Write>(
+pub fn write_targets_file<W: Write>(
     triples: &[String],
     rustc_info: &RustcTargetsInfo,
     doc_info: &DocTargetsInfo,
@@ -58,12 +58,12 @@ use crate::{{
     Ok(())
 }
 
-pub(crate) fn write_list_of_targets<W: Write>(triples: &[String], out: &mut W) -> Result<()> {
+pub fn write_list_of_targets<W: Write>(triples: &[String], out: &mut W) -> Result<()> {
     writeln!(
         out,
         "
 /// The list of all targets recognized by the Rust compiler
-pub(crate) const ALL: &[Platform] = &["
+pub const ALL: &[Platform] = &["
     )?;
     for triple in triples {
         writeln!(out, "    {},", to_const_variable_name(triple))?;
@@ -84,7 +84,7 @@ fn write_target_struct<W: Write>(
     writeln!(
         out,
         "
-pub(crate) const {}: Platform = Platform {{
+pub const {}: Platform = Platform {{
     target_triple: \"{triple}\",",
         to_const_variable_name(triple),
     )?;
@@ -99,7 +99,7 @@ pub(crate) const {}: Platform = Platform {{
 
 /// Accepts the key from the `rustc` output and generates an enum from it,
 /// including all `impl`s that depend on the info about available targets
-pub(crate) fn write_enum_file<W: Write>(
+pub fn write_enum_file<W: Write>(
     key: &str,
     info: &RustcTargetsInfo,
     out: &mut W,

@@ -99,7 +99,7 @@ impl FromStr for AvailabilityImpactToTheSubsequentSystem {
 }
 
 #[cfg(feature = "std")]
-pub(crate) mod merge {
+pub mod merge {
     use super::*;
     use crate::{
         Error,
@@ -115,7 +115,7 @@ pub(crate) mod merge {
     ///
     /// Used in scoring.
     #[derive(Copy, Clone, Debug, Eq, PartialEq, PartialOrd, Ord)]
-    pub(crate) enum MergedAvailabilityImpactToTheSubsequentSystem {
+    pub enum MergedAvailabilityImpactToTheSubsequentSystem {
         Safety,
         High,
         Low,
@@ -158,7 +158,7 @@ pub(crate) mod merge {
     }
 
     impl AvailabilityImpactToTheSubsequentSystem {
-        pub(crate) fn merge(
+        pub fn merge(
             self,
             value: Option<ModifiedAvailabilityImpactToTheSubsequentSystem>,
         ) -> MergedAvailabilityImpactToTheSubsequentSystem {

@@ -23,7 +23,7 @@ pub fn ranges_for_advisory(versions: &Versions) -> Vec<OsvRange> {
 ///
 /// OSV ranges are `[start, end)` intervals, and anything included in them is affected.
 /// Errors if the ranges are malformed or range specification syntax is not supported.
-pub(crate) fn ranges_for_unvalidated_advisory(
+pub fn ranges_for_unvalidated_advisory(
     versions: &RawVersions,
 ) -> Result<Vec<OsvRange>, Error> {
     unaffected_to_osv_ranges(&versions.unaffected, &versions.patched)
